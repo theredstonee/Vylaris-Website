@@ -1,0 +1,71 @@
+# =========================================================================
+# VYLARIS GROUP — Apache config (Plesk-kompatibel)
+# =========================================================================
+
+# ---- Standard-Dokument ----
+DirectoryIndex index.php index.html
+
+# ---- 404-Seite ----
+ErrorDocument 404 /404.php
+
+# ---- Saubere URLs (optional, deaktiviert standardmäßig) ----
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^produkt/([a-z0-9_-]+)/?$ produkt.php?id=$1 [L,QSA]
+
+# ---- Security Headers ----
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+
+    # Cache statische Assets (1 Jahr)
+    <FilesMatch "\.(css|js|woff2?|ttf|otf|eot|png|jpg|jpeg|gif|svg|webp|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # HTML/PHP nicht cachen
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ---- HTTPS erzwingen ----
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ---- Sensible Dateien blockieren ----
+<FilesMatch "\.(json|md|log|env|gitignore|gitattributes)$">
+    Require all denied
+</FilesMatch>
+
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+<Files ".vykey.php">
+    Require all denied
+</Files>
+
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# ---- /config/ und /includes/ direkt nicht erreichbar ----
+RedirectMatch 404 ^/config/
+RedirectMatch 404 ^/includes/
+
+# ---- Kompression ----
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---- ETag deaktivieren (immer Last-Modified) ----
+FileETag None

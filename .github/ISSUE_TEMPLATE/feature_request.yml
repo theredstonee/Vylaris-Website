@@ -1,0 +1,39 @@
+name: Feature-Vorschlag
+description: Idee oder Wunsch für eine neue Funktion
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Schön, dass du Ideen einbringst! Erzähl uns, was dir vorschwebt.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Welches Problem würde dies lösen?
+      placeholder: "Aktuell ist es so, dass... Das nervt, weil..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Wie könnte die Lösung aussehen?
+      placeholder: Beschreibe deine Idee so konkret wie möglich.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativen, die du erwogen hast
+      description: Optional — andere Wege, das Problem zu lösen.
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Wie groß ist die Änderung deiner Meinung nach?
+      options:
+        - Klein (kosmetisch, Icon, Text)
+        - Mittel (neue Sektion, Komponente)
+        - Groß (neue Seite, neues System)
+    validations:
+      required: true

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /.vykey.php
+Disallow: /.vyapi.php
+Disallow: /.vyauth.php
+
+Sitemap: https://vylaris.ch/sitemap.xml

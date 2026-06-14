@@ -1,0 +1,59 @@
+name: Bug-Report
+description: Etwas funktioniert nicht so wie es sollte
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke fürs Melden! Bitte fülle möglichst viele Felder aus.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Was ist passiert?
+      description: Eine klare, knappe Beschreibung des Bugs.
+      placeholder: "Beim Klick auf X passiert Y, erwartet hätte ich Z."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zum Reproduzieren
+      placeholder: |
+        1. Gehe auf '...'
+        2. Klicke auf '...'
+        3. Sieh den Fehler bei '...'
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Verhalten
+      placeholder: Was hättest du stattdessen erwartet?
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Anderer
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Gerät
+      options:
+        - Desktop
+        - Mobil
+        - Tablet
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Zusätzliche Infos
+      description: Screenshots, Console-Logs, alles was hilft.
